@@ -456,4 +456,7 @@ def story():
     print("isn't that cool? personally, i find it quite amusing! it's pretty cool how something so colossal can modify something so small with such precision and ease! waooooooooo!!!!!")
     time.sleep(2)
     print("oh, thats right... person of few words...")
-    time.sleep()
+    time.sleep(4)
+    print("will extend later, thx 4 playing!")
+    surviveending()
+titlescreen()
