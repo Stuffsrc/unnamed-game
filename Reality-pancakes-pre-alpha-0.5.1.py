@@ -6,8 +6,8 @@ import json
 #ADDME add a way to have SFX at certain points in the game, and also some music.
 #TEMPSOLUTION for now the game is locked on medium until i can make the variable storing difficulty work properly. sorry for now
 def titlescreen():
-    print("Unnamed Game! (v0.5.1 pre-alpha)")
-    print("NOTE: this is the first generation of the game. expect some serious and potentially experience-ruining bugs. please report any on the github repository! you'll know what i mean if you're an AUTHORISED playtester!")
+    print("Reality Pancakes (v0.5.1 pre-alpha)")
+    print("NOTE: this is the second generation of the game. expect some serious and potentially experience-ruining bugs. please report any on the github repository! you'll know what i mean if you're an AUTHORISED playtester!")
     time.sleep(5)
     print("welcome! pls choose ur difficulty.")
     time.sleep(2)
