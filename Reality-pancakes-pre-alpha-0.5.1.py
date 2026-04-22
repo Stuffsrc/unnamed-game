@@ -472,5 +472,7 @@ def story():
     print("anyway, guess why they never fully succeeded at this?")
     time.sleep(2)
     print("because... me!")
+    time.sleep(1)
+    print("i'm not going to let them take my freedom! nor that of my employees!")
     surviveending()
 titlescreen()
