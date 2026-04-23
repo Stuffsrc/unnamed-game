@@ -11,7 +11,9 @@ def typewrite(text, delay=0.1):
         print(char, end='', flush=True)
         time.sleep(delay)
     print()  # Move to the next line once finished
-
+#for now, difflevel is defined as 2 for medium until i can get the defining on the go sort of thing to work.
+#if you have any tips to make this work, pls help. thx!
+difflevel = 2
 #ADDME add a way to have SFX at certain points in the game, and also some music.
 #TEMPSOLUTION for now the game is locked on medium until i can make the variable storing difficulty work properly. sorry for now
 def titlescreen():
@@ -474,5 +476,13 @@ def story():
     print("because... me!")
     time.sleep(1)
     print("i'm not going to let them take my freedom! nor that of my employees!")
-    surviveending()
+    time.sleep(2)
+    print("so...")
+    time.sleep(1)
+    print("i killed them all...")
+    time.sleep(4)
+    print("yeah... anyway, the people were ecstatic!")
+    time.sleep(2)
+    print("as you could expect after i removed the pathetic oligarchy controlling them...")
+    time.sleep(3.14159265318)
 titlescreen()
