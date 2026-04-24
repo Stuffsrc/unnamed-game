@@ -3,6 +3,15 @@ import time
 import webbrowser
 import os
 import json
+#starting info for le jeux vidéo.
+game_state = {
+    "difflevel": 2,
+    "ate_pancakes": False,
+    "opened_top_drawer": False,
+    "trust": 0,
+    "reality_stability": 100
+    "2nd_run": False
+}
 #typewriter effect for certain text
 def typewrite(text, delay=0.1):
     for char in text:
@@ -157,7 +166,8 @@ def kitchensceneforrealthistime():
     print("3. look around the kitchen again")
     print("4. do nothing and stay exactly as you are right now")
     choice = input(">")
-    if choice == "1":
+    if choice == "1"
+        game_state["ate_pancakes"] = True
         typewrite("you try to eat the pancakes. As soon as you touch the pancakes, you realise that you are using your hands to eat them, which sucks because they are covered in sticky syrup. it feels weird because you are a civilised human being. probably.")
         time.sleep(1)
         typewrite("anyway, you don't feel like using your hands, and need utensils.")
@@ -318,6 +328,7 @@ def placewhereyoumightdie():
     webbrowser.open("https://github.com/Stuffsrc/unnamed-game")
     time.sleep(1)
     typewrite("would you like to try again? y/n")
+    game_state["ignored_story"] = True
     choice = input(">")
     if choice == "y":
         print("alright, hold up...")
@@ -523,6 +534,7 @@ def story():
     typewrite("did that work? if so, that is a very rough approximation.")
     time.sleep(2)
     typewrite("like my face doesn't even face that way, it's rotated 90° right.")
+    time.sleep(2)
     survivending()
     #story unfinished, deal with it soon
 titlescreen()
