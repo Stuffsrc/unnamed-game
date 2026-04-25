@@ -9,9 +9,8 @@ game_state = {
     "ate_pancakes": False,
     "opened_top_drawer": False,
     "trust": 0,
-    "reality_stability": 100
-    "2nd_run": False
-}
+    "reality_stability": 100,
+    "2nd_run": False }
 #typewriter effect for certain text
 def typewrite(text, delay=0.1):
     for char in text:
@@ -28,7 +27,8 @@ difflevel = 2
 def titlescreen():
     typewrite("Reality Pancakes (v0.5.1 pre-alpha)")
     typewrite("NOTE: this is the second generation of the game. expect some serious and potentially experience-ruining bugs. please report any on the github repository! you'll know what i mean if you're an AUTHORISED playtester!")
-    time.sleep(5)
+    typewrite("also, this game is intended to be played in 1 sitting, hence the current lack of save functionality. i may change this later, but that's it for now.")
+    time.sleep(2)
     typewrite("welcome! pls choose ur difficulty.")
     time.sleep(2)
     intro()
@@ -67,6 +67,13 @@ def intro():
         time.sleep(2)
         difflevel = 4
         intro_scene_bedroom()
+    elif game_state["2nd_run"] == True and difficulty == 5:
+        typewrite("wait...")
+        time.sleep(2)
+        typewrite("how did you...")
+        time.sleep(2)
+        typewrite(">>ERROR: SECURITY BREACH")
+        branch2()
     else:
         print("invalid input. please choose a valid difficulty.")
         intro()
@@ -166,7 +173,7 @@ def kitchensceneforrealthistime():
     print("3. look around the kitchen again")
     print("4. do nothing and stay exactly as you are right now")
     choice = input(">")
-    if choice == "1"
+    if choice == "1":
         game_state["ate_pancakes"] = True
         typewrite("you try to eat the pancakes. As soon as you touch the pancakes, you realise that you are using your hands to eat them, which sucks because they are covered in sticky syrup. it feels weird because you are a civilised human being. probably.")
         time.sleep(1)
@@ -174,6 +181,7 @@ def kitchensceneforrealthistime():
         utensilgetting()
     elif choice == "2":
         typewrite("slightly terrified, you leave the kitchen and head back upstairs.")
+        game_state["reality_stability"] -= 25
         bedroomhallway()
     elif choice == "3":
         typewrite("you look around again. you're in the kitchen. you see a plate of pancakes, and you have absolutely no idea who made them, but they look really good! nothing else of interest is visible to you.")
@@ -205,16 +213,16 @@ def drawers():
     elif choice == "4":
         typewrite("you do nothing and stay exactly as you are right now. nothing exciting happens.")
         drawers()
-    else: typewrite("invalid input. please choose a valid option.")
+    else: typewrite("ḯ̵̬̹͗͝n̸͚̏̿̈̒́͝v̸̼̓a̸͍͋ͅl̶̛͇͓̬̃̏̍i̵̠̪̹̥̅̎́̾d̷̙̟͍͒̀͐̈́̕ ̵̣͠ǐ̵̡̞̣͛̈ͅn̵̰͝p̵͖͐̐̐͝u̸̬̐̂̿̂t̷̨̧̩̼̪̉̈́̈̈. please choose a v̸̼̓a̸͍͋ͅl̶̛͇͓̬̃̏̍i̵̠̪̹̥̅̎́̾d̷͒̀̕ option. [ERROR: REALITY INSTABILITY DETECTED. ATTEMPTING SELF REPAIR.]")
     drawers()
 def topdrawer():
     typewrite("you open the top drawer. you see an old, rusty fork, along with a knife in the same condition and a spoon in pristine condition.")
     time.sleep(3)
-    typewrite("you touch the spoon, but you see reality glitch out. you black out.")
+    typewrite("you touch the s̵̱̭͔̝̬͎̹̗͎͐̾̀̆̑͛̒͋̔̐̚͘p̶̥̜͎̮̬̝̜̳̙̟̟̅̓̀̚ō̷̞̤̑͑̄̂̆͝ô̴̹̦̤͙̺̞̪͉̹̗̓͜ņ̷̨̛̠̥͎̮̝̿͐̋͋̊̂͐͐̈̕͘͜, but you see reality glitch out. you black out.")
     time.sleep(1)
     typewrite("you have blacked out, please wait until you regain consciousness...")
     time.sleep(10)
-    typewrite("you wake up.")
+    typewrite(" ̶w̶e̶ ̶ you wake up. [ERROR, RESTABILISING REALITY]")
     typewrite("you are in a room.")
     typewrite("it's completely dark.")
     typewrite("like, you can't see anything type dark.")
@@ -317,7 +325,7 @@ def placewhereyoumightdie():
         typewrite("alright, suit yourself. you wait around, hoping that someone will save you.")
         typewrite("somehow, you get teleported somewhere else.")
         placewhereyouprobablydie()
-    elif game_state["ignored_story"] = True
+    elif game_state["ignored_story"] == True:
         typewrite("hey, you ignored me last time. that really hurt me. however, i will tell you the story anyway.")
         time.sleep(1)
         story()
@@ -546,7 +554,31 @@ def story():
     time.sleep(2)
     typewrite("like my face doesn't even face that way, it's rotated 90° right.")
     time.sleep(2)
-    survivending()
+    surviveending()
     #story unfinished, deal with it soon
+def branch2():
+    typewrite("well, you've already been through this, so let's cut to le chase.")
+    time.sleep(1)
+    typewrite("in case you could not tell, this reality is collapsing.")
+    time.sleep(1)
+    typewrite("there are a few ways to save it.")
+    time.sleep(2)
+    typewrite("#1 is to find a way to escape this place. from there, you can become a metaphysical entity over this world and remove problematic forces. good luck getting out, though.")
+    typewrite("#2 you find a machine, one similar or identical to the one used on me. or something else. this is hard though. like, really, really hard. i will explain later.")
+    typewrite("#3 would require you to find the un- oh, crap! i've got to take this call, catch you later! good luck lol.")
+    time.sleep(3)
+    typewrite("well, pancake stack just abandoned you. do you still trust him?")
+    print("y/n")
+    choice = input(">")
+    if choice == "y":
+        typewrite("very well, you maintain faith in him despite his leaving.")
+        game_state["trust"] += 5
+        branch2cont()
+    elif choice == "n":
+        typewrite("alright, so you don't trust him. that's fine, you may be able to do this solo.")
+        game_state["trust"] = 0.5
+        branch2cont()
+def branch2cont():
+    typewrite("feeling quite confident in yourself, you begin your quest to find some method of exiting this realm.")
 titlescreen()
- 
+
