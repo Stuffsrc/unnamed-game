@@ -15,10 +15,10 @@ game_state = {
     "2nd_run": False,
     "bottom_opened": False,
     "branch2_path": 0,
-    "choose???" = False,
-    "attempt_reality_break" = False,
-    "bleeding" = False,
-    "health" = 100
+    "choose???": = False,
+    "attempt_reality_break": = False,
+    "bleeding": = False,
+    "health": = 100
 }
 #typewriter effect for certain text
 def typewrite(text, delay=0.1):
