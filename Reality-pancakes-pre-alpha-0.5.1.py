@@ -651,7 +651,7 @@ def inyourhouse()
         game_state["health"] -= 2
         print("you are bleeding! -2 health")
         print(f"Your health level is {health}")
-        break
+         
     typewrite("you may:")
     typewrite("try to [open] the door")
     typewrite("[look] for a way to dig out of your house")
