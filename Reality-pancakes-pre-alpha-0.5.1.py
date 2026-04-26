@@ -7,7 +7,7 @@ import json
 #please note that for the flag "branch2path" 0 is default.
 #it will be set to "1" if the player chooses searchpath and "2" if they choose findpath.
 game_state = {
-    "difflevel": 2,
+    "difflevel": 0,
     "ate_pancakes": False,
     "opened_top_drawer": False,
     "trust": 0,
@@ -18,9 +18,21 @@ game_state = {
     "choose???": False,
     "attempt_reality_break": False,
     "bleeding": False,
-    "health": 100
+    "health": 100,
+    "ignored_story": False
 }
-#typewriter effect for certain text
+#if they somehow get the source code and modify it to allow playing the incomplete
+#path on difficulty level 5, the secret difficulty for branch2 (the full game)
+def cheaterplace()
+    typewrite("C H E A T E R S  N E V E R  P R O S P E R . D I E .
+    typewrite("your health has been reduced to 0.")
+    game_state["health"] = 0
+    typewrite("game over.")
+    typewrite("score = -1047109e193827")
+    typewrite("ending = cheater")
+    time.sleep(3.14)
+    sys.exit
+#typewriter effect for certain text         
 def typewrite(text, delay=0.1):
     for char in text:
         # Use end='' to stay on the same line
@@ -53,28 +65,28 @@ def intro():
         time.sleep(2)
         print("good luck!")
         time.sleep(2) 
-        difflevel = 1
+        game_state["difflevel"] = 1
         intro_scene_bedroom()
     elif difficulty == "2":
         print("you have chosen medium difficulty.")
         time.sleep(2)
         print("good luck!")
         time.sleep(2)
-        difflevel = 2
+        game_state["difflevel"] = 2
         intro_scene_bedroom()
     elif difficulty == "3":
         print("you have chosen hard difficulty.")
         time.sleep(2)
         print("good luck!")
         time.sleep(2)
-        difflevel = 3
+        game_state["difflevel"] = 3
         intro_scene_bedroom()
     elif difficulty == "4":
         print("you have chosen absolute nightmare! (you are going to die btw)")
         time.sleep(2)
         print("good luck!")
         time.sleep(2)
-        difflevel = 4
+        game_state["difflevel"] = 4
         intro_scene_bedroom()
     elif difficulty== "5":
         if game_state["2nd_run"]:
@@ -239,20 +251,24 @@ def topdrawer():
     typewrite("you are in a room.")
     typewrite("it's completely dark.")
     typewrite("like, you can't see anything type dark.")
-    if difflevel == 4:
+    if game_state["difflevel"] == 4:
         typewrite("you try to stand up, but your limbs don't seem to be working. you keep trying. then you realise something. you don't have any limbs. in fact, you are just a head and torso. you're helpless, as could be expected from someone who is just a head and torso.")
         placewhereyouprobablydie()
-    elif difflevel == 3:
+    elif game_state["difflevel"] == 3:
         typewrite("you try to stand up, but your limbs don't seem to be working. you keep trying. then you realise something. you don't have any limbs. in fact, you are just a head and torso. you're helpless, as could be expected from someone who is just a head and torso.")
         placewhereyoumightdie()
-    elif difflevel == 2:
+    elif game_state["difflevel"] == 2:
         typewrite("you try to stand up, but your limbs don't seem to be working. you keep trying. then you realise something. you don't have any limbs. in fact, you are just a head and torso. you're helpless, as could be expected from someone who is just a head and torso.")
         placewhereyouhaveachancetodiebutisnttoomuch()
-    elif difflevel == 1:
+    elif game_state["difflevel"] == 1:
         typewrite("you try to stand up, but your limbs don't seem to be working. you decide to wait for a while.")
         time.sleep(2)
         typewrite("well, while we wait, why don't i tell you a story?")
         story()
+    elif game_state["difflevel"] == 5
+        typewrite("G O  B A C K  T O  T H E  L A Y E R  T H A T  Y O U  B E L O N G  I N !")
+        typewrite("H O W  D I D  Y O U  E V E N  G E T  H E R E ?")
+        cheaterplace()
     else:
         print("[DEBUG] the difficulty level is invalid. this should never happen. never ever. never ever ever. never ever ever ever. never ever ever ever ever. if you see this please report this bug on the github repository!")
 def middledrawer():
