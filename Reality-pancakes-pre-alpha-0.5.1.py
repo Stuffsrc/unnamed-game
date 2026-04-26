@@ -78,15 +78,15 @@ def intro():
         intro_scene_bedroom()
     elif difficulty== "5":
         if game_state["2nd_run"]:
-        typewrite("wait...")
-        time.sleep(2)
-        typewrite("how did you...")
-        time.sleep(2)
-        typewrite(">>ERROR: SECURITY BREACH")
-        branch2()
+            typewrite("wait...")
+            time.sleep(2)
+            typewrite("how did you...")
+            time.sleep(2)
+            typewrite(">>ERROR: SECURITY BREACH")
+            branch2()
         else:
-        print("ḯ̵̬̹͗͝n̸͚̏̿̈̒́͝v̸̼̓a̸͍͋ͅl̶̛͇͓̬̃̏̍i̵̠̪̹̥̅̎́̾d̷̙̟͍͒̀͐̈́̕ ̵̣͠ǐ̵̡̞̣͛̈ͅn̵̰͝p̵͖͐̐̐͝u̸̬̐̂̿̂t̷̨̧̩̼̪̉̈́̈̈. please choose a v̸̼̓a̸͍͋ͅl̶̛͇͓̬̃̏̍i̵̠̪̹̥̅̎́̾d̷̙̟͍͒̀͐̈́̕ difficulty.")
-        intro()
+            print("ḯ̵̬̹͗͝n̸͚̏̿̈̒́͝v̸̼̓a̸͍͋ͅl̶̛͇͓̬̃̏̍i̵̠̪̹̥̅̎́̾d̷̙̟͍͒̀͐̈́̕ ̵̣͠ǐ̵̡̞̣͛̈ͅn̵̰͝p̵͖͐̐̐͝u̸̬̐̂̿̂t̷̨̧̩̼̪̉̈́̈̈. please choose a v̸̼̓a̸͍͋ͅl̶̛͇͓̬̃̏̍i̵̠̪̹̥̅̎́̾d̷̙̟͍͒̀͐̈́̕ difficulty.")
+            intro()
     else:
         print("invalid input. please choose a valid difficulty.")
         intro()
