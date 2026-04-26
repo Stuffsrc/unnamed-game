@@ -18,6 +18,7 @@ game_state = {
     "choose???" = False
     "attempt_reality_break" = False
     "bleeding" = False
+    "health" = 100
 }
 #typewriter effect for certain text
 def typewrite(text, delay=0.1):
@@ -646,6 +647,11 @@ def beforeyoumustblahblahblah()
     inyourhouse()
 def inyourhouse()
     time.sleep(1)
+     if game_state["bleeding"] = True:
+        game_state["health"] -= 2
+        print("you are bleeding! -2 health")
+        print(f"Your health level is {health}")
+        break
     typewrite("you may:")
     typewrite("try to [open] the door")
     typewrite("[look] for a way to dig out of your house")
@@ -674,4 +680,5 @@ def inyourhouse()
         if choice = "[deal]"
             typewrite("you decide to let them bleed and continue")
             game_state["bleeding"] = True
+            inyourhouse()
 titlescreen()
