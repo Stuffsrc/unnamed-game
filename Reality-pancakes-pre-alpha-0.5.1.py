@@ -24,13 +24,14 @@ game_state = {
 #if they somehow get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
 def cheaterplace()
-    typewrite("C H E A T E R S  N E V E R  P R O S P E R . D I E .
+    typewrite("C H E A T E R S  N E V E R  P R O S P E R .  D I E .
     typewrite("your health has been reduced to 0.")
     game_state["health"] = 0
     typewrite("game over.")
     typewrite("score = -1047109e193827")
     typewrite("ending = cheater")
     time.sleep(3.14)
+    typewrite("goodbye.")
     sys.exit
 #typewriter effect for certain text         
 def typewrite(text, delay=0.1):
@@ -447,7 +448,8 @@ def surviveending():
     if choice == "y":
         game_state["2nd_state"] = True
         typewrite("alright, hold up...")
-        time.sleep(3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273724587066063155881748815209209628292540917153643678925903600113305305488204665213841469519415116094330572703657595919530921861173819326117931051185480744623796274956735188575272489122793818301194912983367336244065664308602139494639522473719070217986094370277053921717629317675238467481846766940513200056812714526356082778577134275778960917363717872146844090122495343014654958537105079227968925892354201995611212902196086403441815981362977477130996051870721134999999837297804995105973173281609631859502445945534690830264252230825334468503)
+        typewrite("(you remember a previous conversation. 'meet me at 5' is all you can remember, but it must be important.")
+        time.sleep(3.14)
         print("welcome back! pls choose ur difficulty.")
         time.sleep(2)
         intro()
@@ -587,6 +589,12 @@ def story():
     typewrite("did that work? if so, that is a very rough approximation.")
     time.sleep(2)
     typewrite("like my face doesn't even face that way, it's rotated 90° right.")
+    time.sleep(2)
+    typewrite("anyway...")
+    typewrite("oh, crap. i've got to go. i would explain, but i have not enough time.")
+    typewrite("how about you...")
+    typewrite("meet me at...")
+    typewrite("meet me at 5!")
     time.sleep(2)
     surviveending()
     #story unfinished, deal with it soon
