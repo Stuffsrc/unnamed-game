@@ -686,9 +686,9 @@ def inyourhouse()
     if choice == "open":
         typewrite("you try to open the door. it's locked.")
         inyourhouse()
-    elif choice == "look"
+    elif choice == "look":
         typewrite("you look around. you don't see any way to easily dig out.")
-    elif choice == "bang"
+    elif choice == "bang":
         typewrite("you attempt to bang the door.")
         time.sleep(2.4726)
         print("BANG!")
@@ -701,8 +701,18 @@ def inyourhouse()
         typewrite("[deal] with it and let them bleed")
         typewrite("[search] the house for bandages")
         choice = input(">")
-        if choice = "[deal]"
+        if choice = "deal":
             typewrite("you decide to let them bleed and continue")
-            game_state["bleeding"] = True
+            game_state["bleeding"] = True:
             inyourhouse()
-titlescreen()
+    elif choice = "break":
+        typewrite("you decide to find a way to break a window, even though it is quite small.")
+        typewrite("would you like to attempt to break it with your knuckles, or try to find something to hit it with?")
+        time.sleep(1)
+        typewrite("you may:")
+        typewrite("[break] the windows with your bare fists")
+        typewrite("[look] for something to break the window with")
+        choice = input(">")
+        if choice = "break":
+            if game_state["bleeding"] = True:
+            
