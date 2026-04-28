@@ -20,6 +20,7 @@ game_state = {
     "bleeding": False,
     "health": 100,
     "ignored_story": False
+    "glassshatter": 0
 }
 #if they somehow get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
@@ -715,4 +716,15 @@ def inyourhouse()
         choice = input(">")
         if choice = "break":
             if game_state["bleeding"] = True:
-            
+                typewrite("your fists are bleeding. continue anyway?")
+                typewrite("you may:")
+                time.sleep(1)
+                typewrite("[continue] anyway")
+                typewrite("[don't] continue")
+                choice = input(">")
+                    if choice = "continue"
+                    typewrite("you punch the window with all of your might.")
+                    typewrite("the windows shatters into a million timy pieces.")
+                    typewrite("unfortunately, most of them fly into your body and lodge themselves between your skin.")
+                    typewrite("it feels 1000x worse than having fiberglass in your skin, which is excruciating.")
+                    game_state["glassshatter"] = 1
