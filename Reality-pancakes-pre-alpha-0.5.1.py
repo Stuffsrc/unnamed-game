@@ -35,17 +35,42 @@ def tick
     #add an ending to this so it isnt like this
     elif game_state["glassshatter"] = True
         game_state["health"] -= 2
-        print("the glass lodged between your skin causes further damage!")
+        print("the glass lodged in you causes further damage!")
         print(f"your health level is {health}")
+        
 
 def healthcheck
-    print(f"your health level is: {health}")
-    print(f"your bleeding state is: {bleeding}")
-    print(f"your difficulty level is: {difflevel}")
+    print("         T         ")
+    print("        {|}        ")
+    print("        ---        ")
+    print("       -----       ")
+    print("      -------      ")
+    print("     ---------     ")
+    print("    -----------    ")
+    print("   -------------   ")
+    print("  ---------------  ")
+    print(" ----------------- ")
+    print("-----game info-----")
+    print(f"health? {health}")
+    print(f"bleeding? {bleeding}")
+    print(f"glass in your arm? {glassshatter}")
+    print(f"difficulty? {difflevel}")
+    print(f"stability? {reality_stability}")
+    print("-----game info-----")
+    print(" ----------------- ")
+    print("  ---------------  ")
+    print("   -------------   ")
+    print("    -----------    ")
+    print("     ---------     ")
+    print("      -------      ")
+    print("       -----       ")
+    print("        ---        ")
+    print("        {|}        ")
+    print("         T         ")
 #if they get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
 def cheaterplace()
-    typewrite("C H E A T E R S  N E V E R  P R O S P E R .  D I E .
+    typewrite("C H E A T E R S  N E V E R  P R O S P E R .  D I E .")
     typewrite("your health has been reduced to 0.")
     game_state["health"] = 0
     typewrite("game over.")
