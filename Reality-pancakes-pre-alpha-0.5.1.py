@@ -40,7 +40,7 @@ def tick
         
 
 def healthcheck
-    print("         T         ")
+    print("         ⊥         ")
     print("        {|}        ")
     print("        ---        ")
     print("       -----       ")
