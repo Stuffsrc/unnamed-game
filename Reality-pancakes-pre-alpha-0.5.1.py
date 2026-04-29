@@ -39,8 +39,9 @@ def tick
         print(f"your health level is {health}")
 
 def healthcheck
-    print(f"your health level is {health}")
-    if game_state[""]
+    print(f"your health level is: {health}")
+    print(f"your bleeding state is: {bleeding}")
+    print(f"your difficulty level is: {difflevel}")
 #if they get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
 def cheaterplace()
