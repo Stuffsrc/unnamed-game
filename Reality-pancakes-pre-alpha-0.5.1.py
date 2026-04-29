@@ -34,6 +34,8 @@ def tick
         typewrite("your soul slowly "dissolves" into nothingness.")
     elif game_state["glassshatter"] = True
         game_state["health"] -= 2
+        print("the glass lodged between your skin causes further damage!")
+        print(f"Your health level is {health}")
 #if they get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
 def cheaterplace()
