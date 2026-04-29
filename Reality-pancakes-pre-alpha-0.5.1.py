@@ -20,9 +20,21 @@ game_state = {
     "bleeding": False,
     "health": 100,
     "ignored_story": False
-    "glassshatter": 0
+    "glassshatter": True
 }
-#if they somehow get the source code and modify it to allow playing the incomplete
+def tick
+    if game_state["bleeding"] = True:
+        game_state["health"] -= 2
+        print("you are bleeding! -2 health")
+        print(f"Your health level is {health}")
+    elif game_state["health"] <= 1
+        typewrite("you died.")
+    elif game_state["reality_stability"] = <=1
+        typewrite("suddenly, you feel very intense rumbling. you see a crack appear before your eyes. suddenly, everything goes white. you feel your soul leaving, somehow.")
+        typewrite("your soul slowly "dissolves" into nothingness.")
+    elif game_state["glassshatter"] = True
+        game_state["health"] -= 2
+#if they get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
 def cheaterplace()
     typewrite("C H E A T E R S  N E V E R  P R O S P E R .  D I E .
