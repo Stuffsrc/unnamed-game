@@ -732,6 +732,8 @@ def inyourhouse():
         typewrite("you look around. you don't see any way to easily dig out.")
         inyourhouse()
     elif choice == "bang":
+        tick()
+        time.sleep(1)
         typewrite("you attempt to bang the door.")
         time.sleep(2.4726)
         print("BANG!")
@@ -749,6 +751,7 @@ def inyourhouse():
             typewrite("you decide to let them bleed and continue")
             inyourhouse()
     elif choice == "break":
+        tick()
         typewrite("you decide to find a way to break a window, even though it is quite small.")
         typewrite("would you like to attempt to break it with your knuckles, or try to find something to hit it with?")
         time.sleep(1)
@@ -757,6 +760,7 @@ def inyourhouse():
         typewrite("[look] for something to break the window with")
         choice = input(">")
         if choice == "break":
+            tick()
             if game_state["bleeding"] == True:
                 typewrite("your fists are bleeding. continue anyway?")
                 typewrite("you may:")
@@ -765,9 +769,15 @@ def inyourhouse():
                 typewrite("[don't] continue")
                 choice = input(">")
                 if choice == "continue":
+                    tick()
                     typewrite("you punch the window with all of your might.")
                     typewrite("the windows shatters into a million tiny pieces.")
                     typewrite("unfortunately, most of them fly into your body and lodge themselves between your skin.")
                     typewrite("it feels 1000x worse than having fiberglass in your skin, which is excruciating.")
                     game_state["glassshatter"] = 1
+                elif choice == "don't"
+                    typewrite("you decide not to break the window with your fists.")
+                    typewrite("honestly, considering the condition they are in, that's probably the best choice")
+                    inyourhouse()
+        if choice == "look"
                     
