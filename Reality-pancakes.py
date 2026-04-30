@@ -780,4 +780,6 @@ def inyourhouse():
                     typewrite("honestly, considering the condition they are in, that's probably the best choice")
                     inyourhouse()
         if choice == "look"
+            tick()
+            typewrite("you decide to look for an object to smash the window with.")
                     
