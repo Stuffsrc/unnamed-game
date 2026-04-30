@@ -23,8 +23,8 @@ game_state = {
     "glassshatter": True
 }
 def tick():
-    if game_state["bleeding"] == True:
-        game_state["health"] -= 2
+    if game_state["bleeding"] >= 0:
+        game_state["health"] -= game_state["bleeding"]
         print("you are bleeding! -2 health")
         print(f"your health level is {game_state['health']}")
     elif game_state["health"] <= 1:
