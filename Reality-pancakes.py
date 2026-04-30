@@ -19,27 +19,27 @@ game_state = {
     "attempt_reality_break": False,
     "bleeding": False,
     "health": 100,
-    "ignored_story": False
+    "ignored_story": False,
     "glassshatter": True
 }
-def tick
-    if game_state["bleeding"] = True:
+def tick():
+    if game_state["bleeding"] == True:
         game_state["health"] -= 2
         print("you are bleeding! -2 health")
-        print(f"your health level is {health}")
-    elif game_state["health"] <= 1
+        print(f"your health level is {game_state['health']}")
+    elif game_state["health"] <= 1:
         typewrite("you died.")
-    elif game_state["reality_stability"] = <=1
+    elif game_state["reality_stability"] <= 1:
         typewrite("suddenly, you feel very intense rumbling. you see a crack appear before your eyes. suddenly, everything goes white. you feel your soul leaving, somehow.")
         typewrite("your soul slowly dissolves into nothingness.")
     #add an ending to this so it isnt like this
-    elif game_state["glassshatter"] = True
+    elif game_state["glassshatter"] == True:
         game_state["health"] -= 2
         print("the glass lodged in you causes further damage!")
-        print(f"your health level is {health}")
+        print(f"your health level is {game_state['health']}")
         
 
-def healthcheck
+def healthcheck():
     print("         ⊥         ")
     print("        {|}        ")
     print("        ---        ")
@@ -51,11 +51,11 @@ def healthcheck
     print("  ---------------  ")
     print(" ----------------- ")
     print("-----game info-----")
-    print(f"health? {health}")
-    print(f"bleeding? {bleeding}")
-    print(f"glass in your arm? {glassshatter}")
-    print(f"difficulty? {difflevel}")
-    print(f"stability? {reality_stability}")
+    print(f"health? {game_state['health']}")
+    print(f"bleeding? {game_state['bleeding']}")
+    print(f"glass in your arm? {game_state['glassshatter']}")
+    print(f"difficulty? {game_state['difflevel']}")
+    print(f"stability? {game_state['reality_stability']}")
     print("-----game info-----")
     print(" ----------------- ")
     print("  ---------------  ")
@@ -69,7 +69,7 @@ def healthcheck
     print("         T         ")
 #if they get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
-def cheaterplace()
+def cheaterplace():
     typewrite("C H E A T E R S  N E V E R  P R O S P E R .  D I E .")
     typewrite("your health has been reduced to 0.")
     game_state["health"] = 0
@@ -312,7 +312,7 @@ def topdrawer():
         time.sleep(2)
         typewrite("well, while we wait, why don't i tell you a story?")
         story()
-    elif game_state["difflevel"] == 5
+    elif game_state["difflevel"] == 5:
         typewrite("G O  B A C K  T O  T H E  L A Y E R  T H A T  Y O U  B E L O N G  I N !")
         typewrite("H O W  D I D  Y O U  E V E N  G E T  H E R E ?")
         cheaterplace()
@@ -686,11 +686,11 @@ def branch2cont():
         searchpath()
     elif choice == "find":
         findpath()
-    elif choice ==  "???"
+    elif choice ==  "???":
         typewrite("sorry, reality is not stable enough for this. please choose another option.")
         game_state["choose???"] = True
         branch2contpathchoose()
-def branch2contpathchoose()
+def branch2contpathchoose():
     typewrite("this is ą̴̢̨̡̡̨̧̡̨̛̤̪̬̪͔͙̺̖̺̩̻̲̬̣̻̦̰͍̫̯̠͍̗͎̭̩̞̳̰̣͎̮̣̻̈́̔̎̇͊̅͆̎̃̑̽͌̓̾͂͑̾́̊̅̏͐̇͂̿̈̏͌̋̏͋̋̾̍̈́̈́͌̆̍̀͋̉̋̾̐͌̈͊̈́͑̆̓̐̿̓̄̄̓̾͂̚͘̚̕̚͘͝ͅ ̶̡̢̢̡̩̥̜͉̩̱͔̬̯͈͉͚̹͚̞̬͕͕̦̭͉̖͖̭̬̩͔̭̰̦͔̗͎̻̇̍̈́͊̽̋̾̅̑͛̽̔̒̈́̿͐͒͂̃̆̃̿͌͑̈́͐͌͋̆̀̉̋͐̑̀̄̌̉̈́̆͋́̾̌͋̓̌̏̂́̄͘̕͘̕̚̚̚͝͠͝͝͝͠d̴̨̨̧̨̨̨̨̧̧̛̛̛̩̘͓͉̲̲̝͈̙̟̫͙̳̳̭͇̜͇̣̗͎̣̪̮̳̖̫̰̭͔͉̤̱͙͙̪̩̠̻͎̘̬̻̤͙̯̩̪̱͎͕̠͇̭͚̥̺͚̙̬̝̙̙̭̻̠̟̟̼͖̯͈̼̣̖̻̞̬̖̙̠̯̺͉̟̰̲̞̮̣̼͚̜̦͔̞̬̦̻̝̣͎͖͕̮͍̳̠̦̬̥̖̤̦̣͖̹͈͓͖̝͇̭̹̯͔̹̰̞̻̪̣̪̠̘̎͗̊̈́͆́̄̈́̉̇͂̈͂̔́̏̓͌̊́͗̌̽̇̔̽̾̿̏͌̈́̃̈́̃̑̐̽͊̍̃̈́͗͗͑̌͑́̽̐̿̉͌̉͂͛͂̽̃̉̈́̀̑̊͋̇́̔͌̒̽̍͒̈́̉̌̆̐̍̑͐̓̈́̈́̉̾̾̐̑̈́̈́̏̅̂̏̒̒̔̄̅̾̅̈́́͛̎̒̃̇̄̌̎̕̕̚͘͘̕̚̚̕͘͜͜͜͝͝͝͝͠͝͝͝͝͝͝͠͠i̸̢̧̡̨̧̛̛̛̯̰͉̞͎̜̠̹͕͈̺̲̹̱̲̝̺̱͎̘̠̠̥̻̜̳͍̲̦̟̱͉̦̺͚̘̞̣͇͈̫̬̠̺̫̣̱̞̻͍͗̀͋̌̓̐̏̔͒̃̏͒́͒͐̀̏̄̋̀̌̑̊͋̊̓̑͆̌͗́̈́͛̑̆̋́͐́̑́̐̊̇́̓́̾̏͛̓̿̄̋́͌́͐̅̉̾̀̎́̍̓̇̈́̀̓̋̇̃̉̈́̄́̓͆̋͗̏̊̓͌̏̍̓̈́̀͒͌̓̔̀͛̐̓̓̚̚͘̚̕̚͘̚͜͜͜͠͝͝͝͠͠͝͠͝͠͠ͅͅͅf̴̡̡̢̡̡̧̢̛̖̬̗̦̗̯̬͓̫͉̣̩̣̺̜̘̠͈̫̘̻̣̫̯̪̗̦̣̣͚͕͉̳̜͉̟̠͖̭̫̱̀̅̃͆̋̃̀̂̈́̐̈́́̊͌̎̇̇̎̔͋͌̉͛̍̃̌̑͗͗͊́͆̄̓͐̎̊̒͋̃͒̿̓̽̀̌̇͛͋̿̏͘̕͘͘͝͠ͅͅf̸̡̧̡̨̧̢̡̧̢̧̢̡̺͔͖̖̭͎̹̺͈͎͓͙͙̺̗͚̹̻͇͍̗̦̜̬̜̱̱̤̞͍̪̫̖̦̥͉̹͈̝̞̱̝͕͇̤͇͔̜͚̮̳̰͉̜̭̘̙͔͖͍̠͕̪͓̩̳̣̖̱̗̯͙̮̤͖͉͙̤̜͔̼͎̟̜͕̮̻͎̗͓͖̭̱̠̱͕̩̳̬̦̣̟̮̻͉̜̤̞̼̤̩̻͕͈̲̬̖̠̣̹̫͉͉̜̝͓̱̘͖͎̜̳̞̣̌̏̒̒̂̓̀́͐̄͜͜͜ͅͅͅͅẽ̸̢̨̧̧̛͔͙̪͉̻͕̟̻̥̙͇̟̬̬͙͖̤͚̹̱͓̼͚̬̥͓̝͉͔͓̮̖̪͙̗̹̹̩̻̘̩̈́̈́͆͑̾͑̅̀͋̒̎́͊͂͆͑͂̅͂́̓̆̓̃͂̓̇̔̿̒̏̊̽͗͋̈́́̾̄̅̑͋̾̌̒̔̋͂̿̂͑̎͐̃̄̽̐́͛̌̎́͐̾͊̾̔̈́̀͂͑̄̚̕̕͜͠͠͠͠͝͝͠͝ͅͅͅŗ̵̢̧̢̨̨̨̧̨̨̨̨̨̡̡̛̛̛̛̭̗͕͔̫̬͔̗̖̳̬̭̼̼̳͈̞̞͚̖̤͈̫͔͙̗͕͍̯͔̰͉͎̫̪̳̤̝̞͖͉͚̭̲̣̪̱̝͖͎̻̭̫̠̯͔̺͖͈̝͉̝̦̦̪̮͈̠͙͎͚͖̬̯͔̹͚̗̜͖̩̦̹̙̦̼̤̮͈̥̘̼͚͍̣̳̣̲̺̠͍͖̪̱͚̬̺͐̌͆̓̀͊̔̈́̽̌̀͋̌̒̌̏̈́̉͒͗̇̾͌͛̌̿͛͋͌̇̎̒̈́̈́̋̋̾̑̂͌̓̇̀̽̈́̿͗̌̈́̆̉̈́̀̓͛͆̈́͊̓͒̔̐̓̈́̏̀̇̎̾̽͆́̈̄̃̋͆̀̑̈͛̄͊̽̄͌͛̈́͗͌̄͐̐̎͆̓̌̾̓̉̃̿̎͆͂͊̓͑͑̒̌̂̒̌̊̑̚͘̚͘͘͘͘̚͘̚̚̕͘̕͜͜͠͝͝͝͠͝͝͠e̵̹̲͚̼̺͚͔̟̱̱͉͙͙̅͛̃̿n̸̨̨̡̡̢̨̢̢̧̧̧̨̢̛̛̛̛̞̼͈̜̫͕͍͓̩̬̥̱̟̥̠̟͉̦̣̻̫̗̖̞̘̣̭̭̩̼̹͕͎̹̠̲̬̱̺͚͚̜̦̖̱͇̱͓̠̟̝̝͔̪͓͎̙̭͚̬̗̳̺̜̻̪̼̳͕̝̪̼̭̣̘̭͖̗͙̯̬͔͇͈̖̭̙͎͈͙͔͔̱̞̜̙͈͓̼̣̗̼͓̹͎͎̥͉͇̠͎͇͔̬͇͔̠͓̻͎̬̙̯͈̠͔͙̜̱̱̦̞̼͙̯̺͈̖̿͛̾̍͗̿̔̇̏̄̈́̑͋̈͋͑͒̅͆͗͊̓̽͊̒̊́́̽̊͐͋̈́̾̈́̎̄̈́͛̆̉̓͋̀̅̃̀́̓̓͛́͑́̽̈́́̈̂̓̒̓̇̅̔̊͑͒̔̽̔̔̃̑̐̽͑̈́͛̑̋̅̓͒̃͂̒͋̑͂̄̑̈́̽́͛̍̆̒̇̽͐̾̀͛̃͌̈͂̀͗͌̃̊̄̀̂͌͒͊͑̃͋̿̓̏́̒̀̚̚͘͘̚͘̚͘̕͜͜͠͠͠͝͠͝͝͝ͅͅͅt̸̛̛̛̳̣̑̐͗̓́̿̇̈́͗̆̎͑̏̑̿̑̿̽̾̋̓͂̇̇̋̀̇̇̈́̋͐̇͌͛̈́̓̏̒̀̂̒͑̿̑̃̒͊̈́́̈́͒͆̇̊͐̄̂̆͊̐͑̐̃͑͋͂̅͊̎͑͊̉̎͌͋̋̃͊͂̓͂̀͂̓̾͛̉͂̈̓͊͌̎͒͋͌̔̍̔͋̋̌̈̈̾̿̾͂͑͑͌̈́͗̀̽͋͂̔̄̐͐̈́̿̈́͑̉͊̍̾̚͘̕͘͘̕͜͝͠͝͝͝͝͝͝͠ ̶̨̡̡̡̢̡̨̨̨̢̨̧̛̛̛̛͕̩̠͍̯̩͉͈̱̲͕͍͕̪̺̟̱̖̩̠̙͉̳̬̲̭̫̯̥̝͕̯̝̭̗̯̪̳̹̘͍̠̫̩̠̹͈̘̙̙̩̬̺̗͔̳̱̼͚͖͓̞̲̣͓͙̘̮̰̦̭͇͓͍͖̻̭̜̤̠̫͇̥̮̩̠̱͚̝̫̟̪̯͇̪̭̺̄̀̑̄̂̅̽̾͆̍̂͛͌͛͆̍̉̽̎̌̓͂̓͆͒͂̆̃̃̈́̿́̽̔̿̂̿̃̋̊̐͂̈́̈́̅͑̂̾͌̍̾͂̾̄̐̎̓̐̎̆͂̈͂̉̊͗̽̿̓͊͒̓͋͂̇̈́͐̐̓̋̎͗̏̿̀̒̽͋̀̌̄̀̓͘̚̚͘̕̕̚̚̚̕͘̚͜͜͜͜͠͝͠͠͝͝͠͠ͅg̴̨̢̛̛͉̭̖̱̱̺̼̼̮͉̯̦̹͎̬̹̗̟͍͈̞͔̗̮̜̹͙͈͇͉̘̤͙͇̫̐͂̓̏̍̓̅͋͐̎̂̌̾͒̈̅͆͋̽̄͗̄̓̆̿̂̓͛̂̀̑̎́̏́͆͆̊̋͂͛̈́̈̊̉͑̏̓̂̑̒̃̏̇̎̄͒̅̋̀͑̃̌̅̏̾̓̄̌͊̕͘̕͘̚͜͝ͅͅͅą̶̧̛̛̛̛̻͍̱͈̯̙͈̘̻̱̬̠̮̥̲̟͖̙̳̲̲̼̘̪̗͊͐̾̀́̾̈́̇̔̐͌̇̂͊̒̏͋̌͊̂̈͆̀̈́̆̔̿͌̾̑͆̄̃͂͑̀̇̋̍͋̾̽̅͊̈́̐̀̐̈́̎͛͆̐̏̒̅̓̽̄̋͆̈́̐̆̓͊̅̉̅̄͒̈̂̋̓̑̎͛̔͆̃̔̄̑̄́̉͂̅̂̐̈̊̀̎̈́̄̌̀̚̕̚̕̚͘̚͘̚͘͝͝͠͝͝͠͝͠ͅm̸̧̢̡̡̧̢̢̬̖̯̫̲̙̥̻͙͚̘̫͚̳͎͍̘̹͙̮͔̝̪͇̯͕̲͓͔̯̞̲̩̭͇̟̥̗̻͓̟̙̖̲̦̞̬͙̞͉̤͖̮̙͈̺̱̖͎̫̣̪̗̜͔̳̺̘̥̬̺̩̞̘̣̙̼̮̼͇͎͕̥̻̙̜̤̪͕͈̥̞̼̱̖͔̲͎̥̯̭͚̱͚̹͇̬͍̙͇͙̩̝̌͋͆͑́̓̍̋̾̿̂͊͑͂̆͊̈́̕͘͜͜͜͜ͅͅͅȩ̢̨̡̡̨̧̨̨̖͇̼̜̖̟͕̰̖̲̼̹̲̟͖̗̬͈̭̺̲̗̜̞̝̳̞̹̻̠̱̳͎͙̫̪̤͈̼̯̻̼̝͕̱̖͔̫͍͚̰̟̻͔͖͎̙͓͙̰͖̲͓̞̰̤̠̣̻͇͕̼̥̰̺̮̼̙̭͈͈͔͎͜͜͜͜ͅͅͅ the same game. please type the word corresponding to your choice.")
     typewrite("[search] this realm for a way to escape")
     typewrite("[find] a machine similar to the one used by pancake stack")
@@ -699,29 +699,25 @@ def branch2contpathchoose()
         searchpath()
     elif choice == "find":
         findpath()
-    elif choice ==  "???"
+    elif choice ==  "???":
         typewrite("sorry, reality is not stable enough for this. please choose another option.")
         game_state["choose???"] = True
         branch2contpathchoose()
-def searchpath()
+def searchpath():
     typewrite("you decide to begin a search for a way out of this place.")
     game_state["branch2_path"] = 1
     inyourhouse()
-def findpath()
+def findpath():
     typewrite("you decide to attempt to find a machine to help you exit.")
     game_state["branch2_path"] = 2
     inyourhouse()
-def beforeyoumustblahblahblah()
+def beforeyoumustblahblahblah():
     typewrite("before you can do anything, however, you must leave your house.")
     typewrite("what will you do?")
     inyourhouse()
-def inyourhouse()
+def inyourhouse():
+    tick()
     time.sleep(1)
-     if game_state["bleeding"] = True:
-        game_state["health"] -= 2
-        print("you are bleeding! -2 health")
-        print(f"Your health level is {health}")
-         
     typewrite("you may:")
     typewrite("try to [open] the door")
     typewrite("[look] for a way to dig out of your house")
@@ -734,6 +730,7 @@ def inyourhouse()
         inyourhouse()
     elif choice == "look":
         typewrite("you look around. you don't see any way to easily dig out.")
+        inyourhouse()
     elif choice == "bang":
         typewrite("you attempt to bang the door.")
         time.sleep(2.4726)
@@ -747,11 +744,11 @@ def inyourhouse()
         typewrite("[deal] with it and let them bleed")
         typewrite("[search] the house for bandages")
         choice = input(">")
-        if choice = "deal":
+        if choice == "deal":
+            game_state["bleeding"] = True
             typewrite("you decide to let them bleed and continue")
-            game_state["bleeding"] = True:
             inyourhouse()
-    elif choice = "break":
+    elif choice == "break":
         typewrite("you decide to find a way to break a window, even though it is quite small.")
         typewrite("would you like to attempt to break it with your knuckles, or try to find something to hit it with?")
         time.sleep(1)
@@ -759,17 +756,18 @@ def inyourhouse()
         typewrite("[break] the windows with your bare fists")
         typewrite("[look] for something to break the window with")
         choice = input(">")
-        if choice = "break":
-            if game_state["bleeding"] = True:
+        if choice == "break":
+            if game_state["bleeding"] == True:
                 typewrite("your fists are bleeding. continue anyway?")
                 typewrite("you may:")
                 time.sleep(1)
                 typewrite("[continue] anyway")
                 typewrite("[don't] continue")
                 choice = input(">")
-                    if choice = "continue"
+                if choice == "continue":
                     typewrite("you punch the window with all of your might.")
-                    typewrite("the windows shatters into a million timy pieces.")
+                    typewrite("the windows shatters into a million tiny pieces.")
                     typewrite("unfortunately, most of them fly into your body and lodge themselves between your skin.")
                     typewrite("it feels 1000x worse than having fiberglass in your skin, which is excruciating.")
                     game_state["glassshatter"] = 1
+                    
