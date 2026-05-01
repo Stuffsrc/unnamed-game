@@ -78,7 +78,7 @@ def status():
     print("         T         ")
 def inventorych():
     if inventory["fire_axe"] >= 0 
-    print(f"you have {inventory["fire_axe"]} fire axe(s.)")
+        print(f"you have {inventory["fire_axe"]} fire axe(s.)")
     #add this l8r
 #if they get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
