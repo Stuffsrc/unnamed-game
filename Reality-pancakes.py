@@ -22,6 +22,8 @@ game_state = {
     "ignored_story": False,
     "glassshatter": True
 }
+#i will add some ids for each item soon
+#fret not
 inventory = {
     "fire_axe": 0,
     "cloth": 0,
@@ -74,6 +76,8 @@ def status():
     print("        ---        ")
     print("        {|}        ")
     print("         T         ")
+def inventory():
+    #add this l8r
 #if they get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
 def cheaterplace():
