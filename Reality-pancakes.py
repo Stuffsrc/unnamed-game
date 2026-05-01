@@ -796,3 +796,4 @@ def inyourhouse():
             tick()
             typewrite("you decide to look for an object to smash the window with.")
             time.sleep(1)
+titlescreen()
