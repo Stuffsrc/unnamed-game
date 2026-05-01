@@ -22,6 +22,13 @@ game_state = {
     "ignored_story": False,
     "glassshatter": True
 }
+inventory = {
+    "fire_axe": 0,
+    "cloth": 0,
+    "stick": 0,
+    "paperslip": 0,
+    "ammo": 0
+}
 def tick():
     if game_state["bleeding"] >= 0:
         game_state["health"] -= game_state["bleeding"]
@@ -39,7 +46,7 @@ def tick():
         print(f"your health level is {game_state['health']}")
         
 
-def healthcheck():
+def status():
     print("         ⊥         ")
     print("        {|}        ")
     print("        ---        ")
@@ -782,4 +789,4 @@ def inyourhouse():
         if choice == "look"
             tick()
             typewrite("you decide to look for an object to smash the window with.")
-                    
+            time.sleep(1)
