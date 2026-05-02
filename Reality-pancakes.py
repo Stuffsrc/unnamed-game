@@ -79,6 +79,16 @@ def status():
 def inventorych():
     if inventory["fire_axe"] >= 0 
         print(f"you have {inventory["fire_axe"]} fire axe(s.)")
+    elif inventory["cloth"] >= 0
+        print(f"you have {inventory["cloth"]} cloth(s?)")
+    elif inventory["stick"] >= 0
+        print(f"you have {inventory["stick"]} stick(s.)")
+    elif inventory["paperslip"] >= 0
+        print(f"you have {inventory["paperslip"]} slip(s) of paper.")
+    elif inventory["ammo"] >= 0
+        print(f"you have {inventory["ammo"]} ammunition(s.)")
+    else
+        print("you have... nothing.")
     #add this l8r
 #if they get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
