@@ -89,7 +89,9 @@ def inventorych():
         print(f"you have {inventory["ammo"]} ammunition(s.)")
     else
         print("you have... nothing.")
-    #add this l8r
+    #add more by adding them to the dictionary, adding them here as the others are, and giving them a presence in the game.
+
+
 #if they get the source code and modify it to allow playing the incomplete
 #path on difficulty level 5, the secret difficulty for branch2 (the full game)
 def cheaterplace():
