@@ -36,13 +36,13 @@ def tick():
         game_state["health"] -= game_state["bleeding"]
         print("you are bleeding! -2 health")
         print(f"your health level is {game_state['health']}")
-    elif game_state["health"] <= 1:
+    if game_state["health"] <= 1:
         typewrite("you died.")
-    elif game_state["reality_stability"] <= 1:
+    if game_state["reality_stability"] <= 1:
         typewrite("suddenly, you feel very intense rumbling. you see a crack appear before your eyes. suddenly, everything goes white. you feel your soul leaving, somehow.")
         typewrite("your soul slowly dissolves into nothingness.")
     #add an ending to this so it isnt like this
-    elif game_state["glassshatter"] == True:
+    if game_state["glassshatter"] == True:
         game_state["health"] -= 2
         print("the glass lodged in you causes further damage!")
         print(f"your health level is {game_state['health']}")
@@ -77,18 +77,19 @@ def status():
     print("        {|}        ")
     print("         T         ")
 def inventorych():
-    if inventory["fire_axe"] >= 0 
+    if inventory["fire_axe"] >= 0:
         print(f"you have {inventory["fire_axe"]} fire axe(s.)")
-    elif inventory["cloth"] >= 0
+    if inventory["cloth"] >= 0:
         print(f"you have {inventory["cloth"]} cloth(s?)")
-    elif inventory["stick"] >= 0
+    if inventory["stick"] >= 0:
         print(f"you have {inventory["stick"]} stick(s.)")
-    elif inventory["paperslip"] >= 0
+    if inventory["paperslip"] >= 0:
         print(f"you have {inventory["paperslip"]} slip(s) of paper.")
-    elif inventory["ammo"] >= 0
+    if inventory["ammo"] >= 0:
         print(f"you have {inventory["ammo"]} ammunition(s.)")
-    else
+    if all(inventory.get(item, 0) == 0 for item in ["fire_axe", "cloth", "stick", "paperslip", "ammo"]):
         print("you have... nothing.")
+    
     #add more by adding them to the dictionary, adding them here as the others are, and giving them a presence in the game.
 
 
